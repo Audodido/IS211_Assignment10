@@ -18,12 +18,9 @@ cur.execute('''CREATE TABLE IF NOT EXISTS people
 cur.execute('''CREATE TABLE IF NOT EXISTS pets
             (id INTEGER PRIMARY KEY, name TEXT, breed TEXT, age INTEGER, dead INTEGER)''')
 
-cur.execute('DROP TABLE people_pets')
-
 cur.execute('''CREATE TABLE IF NOT EXISTS people_pets
             (person INTEGER, pet INTEGER)''')
 
-            # (id INTEGER PRIMARY KEY, person INTEGER, pet INTEGER)''')
 
 
 if __name__ == "__main__":
