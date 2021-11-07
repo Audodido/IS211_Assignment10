@@ -17,11 +17,13 @@ def get_user():
                     print('Goodbye.')
                     break
                 else:
-
                     cur.execute('''
                     SELECT ppl.first_name, 
-                    ppl.last_name, 
-                    p.name
+                    ppl.last_name,
+                    ppl.age, 
+                    p.name,
+                    p.age,
+                    p.dead
                     FROM people_pets pp
                     LEFT JOIN pets p
                     ON pp.pet = p.id
@@ -31,7 +33,13 @@ def get_user():
 
                     results = cur.fetchall()
                     if len(results) > 0:
-                        print(results)
+                        for r in results:
+                            print(f'{r[0]} {r[1]}, {r[2]} years old:')
+                            if r[5] == 0:
+                                print(f'{r[0]} {r[1]} owned {r[3]} — who was {r[4]} years old.')
+                            else:
+                                print(f'{r[0]} {r[1]} owns {r[3]} — who is {r[4]} years old.')
+
                     else:
                         print('No users found with that ID. Please try again.')
             except:

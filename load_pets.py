@@ -10,11 +10,6 @@ data = {
     'pets' : [(1, 'Rusty', 'Dalmation', 4, 1), (2, 'Bella', 'Alaskan Malamute', 3, 0), (3, 'Max', 'Cocker Spaniel', 1, 0), (4, 'Rocky', 'Beagle', 7, 0), (5, 'Rufus', 'Cocker Spaniel', 1, 0), (6, 'Spot', 'Bloodhound', 2, 1)],
     'people_pets' : [(1,1),(1,2),(2,3),(2,4),(3,5),(4,6)]}
 
-# cur.execute("""DROP TABLE people_pets""") 
-# cur.execute("""DROP TABLE pets""") 
-# cur.execute("""DROP TABLE people""") 
-
-
 cur.execute('''CREATE TABLE IF NOT EXISTS people
             (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, age INTEGER)''')
 
@@ -40,13 +35,3 @@ if __name__ == "__main__":
     conn.commit()
 
     conn.close()
-
-    # cur.execute('SELECT * FROM people')
-    # print(cur.fetchall())
-    # cur.execute('SELECT * FROM pets')
-    # print(cur.fetchall())
-    # cur.execute('SELECT * FROM people_pets')
-    # print(cur.fetchall())
-
-        
-
