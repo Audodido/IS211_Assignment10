@@ -9,16 +9,13 @@ def get_user():
     with conn:
 
         id = ''
-
+        
         while id != '-1':
-
             try: 
                 id = input("Enter an ID #:")
-
                 if id == '-1':
                     print('Goodbye.')
                     break
-
                 else:
 
                     cur.execute('''
@@ -37,10 +34,8 @@ def get_user():
                         print(results)
                     else:
                         print('No users found with that ID. Please try again.')
-
             except:
                 print('Invalid entry. Please try again.')
-
 
 
 if __name__ == "__main__":
